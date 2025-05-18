@@ -9,7 +9,7 @@
 <meta property="og:title" content="evyh - Music Producer & Web Developer">
     <meta property="og:description" content="OST Composer for games and music producer for artists. Also offering web development services.">
     <meta property="og:image" content="https://evyhmusic.github.io/imagens/share-image.png">
-    <meta property="og:url" content="https://evyhmusic.github.io">
+    <meta property="og:url" content="https://evyh.xyz">
     <meta property="og:type" content="website">
     
     <meta name="twitter:card" content="summary_large_image">
@@ -936,9 +936,39 @@
     cursor: default;
 }
 
+ #language-switcher {
+    position: fixed;
+    top: 17px;
+    right: 10px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  #language-switcher button {
+    padding: 2px 6px;
+    font-size: 10px;
+    border: none;
+    border-radius: 4px;
+    background: #ffffffdd;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.2s ease;
+  }
+
+  #language-switcher button:hover {
+    background: #ccc;
+  }
+</style>
     </style>
 </head>
 <body>
+
+    <div id="language-switcher">
+  <button onclick="switchLang('pt')">🇧🇷 PT</button>
+  <button onclick="switchLang('en')">🇺🇸 EN</button>
+</div>
 
     <div class="page-loader">
     <div class="loader"></div>
@@ -1403,13 +1433,28 @@ document.querySelectorAll('.custom-audio-player').forEach(player => {
     });
 });
 
+// detecta o idioma do navegador
+    const userLang = navigator.language.includes('pt') ? 'pt' : 'en';
+    // redireciona para /pt ou /en
+    window.location.href = `/${userLang}/`;
 
+     function switchLang(lang) {
+    // salva a escolha do usuário
+    localStorage.setItem('langOverride', lang);
+    // redireciona para a versão escolhida
+    window.location.href = `/${lang}/`;
+  }
 
-
-
-
+  // se o usuário ainda não escolheu manualmente, detecta idioma do navegador
+  const hasOverride = localStorage.getItem('langOverride');
+  if (!hasOverride && window.location.pathname === '/') {
+    const lang = navigator.language.toLowerCase();
+    const userLang = lang.startsWith('pt') ? 'pt' : 'en';
+    window.location.href = `/${userLang}/`;
+  }
 
     </script>
-
+<!-- fallback (se o JS não funcionar) -->
+  <p>Redirecting to your language... <a href="/en/">Click here if nothing happens.</a></p>
 </body>
 </html>
