@@ -1,0 +1,1453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="evyh - Music Producer & Web Developer. OST Composer for games and music producer for artists. Also offering web development services.">
+<link rel="icon" type="image/png" href="/../imagens/flavicon.png">
+
+<meta property="og:title" content="evyh - Music Producer & Web Developer">
+    <meta property="og:description" content="OST Composer for games and music producer for artists. Also offering web development services.">
+    <meta property="og:image" content="https://evyhmusic.github.io/../imagens/share-image.png">
+    <meta property="og:url" content="https://evyh.xyz">
+    <meta property="og:type" content="website">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://evyhmusic.github.io/../imagens/share-image.png">
+    <meta name="theme-color" content="#1a1a1a">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Megrim&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,100..1000;1,100..1000&display=swap" rel="stylesheet">
+
+<title>evyh - Music Producer & Web Developer</title>
+<style>
+    :root {
+        --primary-color: #afafaf; 
+        --secondary-color: #5e5e5e; 
+        --background-color: #1a1a1a; 
+        --text-color: #ecf0f1; 
+        --card-background: #373737; 
+        --hover-color: #0f0f0f;
+        --scroll-behavior: smooth;
+        --font-primary: 'DM Sans', sans-serif; 
+    }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: var(--scroll-behavior);
+            font-family: var(--font-primary);
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            font-size: 16px; 
+            overflow-x: hidden; 
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1, h2, h3, h4 {
+            color: var(--primary-color);
+            font-weight: 700;
+            font-family: 'DM Sans';
+        }
+
+        h1 { font-size: 2.8rem;
+            font-family: 'Megrim';
+         
+        }
+        h2 { font-size: 2.2rem;
+            font-family: 'Megrim';
+         
+        }
+        h3 { font-size: 1.8rem;
+        font-family: 'Megrim';
+     }
+
+        p {
+            margin-bottom: 1rem;
+            font-family: 'DM Sans';
+            
+        }
+
+        a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--hover-color);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px; 
+        }
+
+        section {
+            padding: 40px 0; 
+            min-height: 80vh; 
+            border-bottom: 1px solid #333; 
+        }
+
+        section:last-of-type {
+            border-bottom: none;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2.5rem;
+        }
+
+        /* nav */
+        #navbar {
+            height: 70px; 
+            padding: 0 0; 
+            background-color: rgba(14, 14, 14, 0.9);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.4s ease;
+            display: flex;
+            align-items: center;
+        }
+
+        #navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px; 
+            padding: 0 20px; 
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        #navbar .logo-container {
+            flex: 1;
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        #navbar .nav-center {
+            flex: 2;
+            display: flex;
+            justify-content: center;
+        }
+
+        #navbar .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        #navbar ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+            margin: 0;
+            padding: 0;
+        }
+
+        #navbar ul li {
+            margin: 0;
+        }
+
+        #navbar ul li a {
+            color: var(--text-color);
+            font-weight: 500;
+            padding: 0.5rem 0;
+            position: relative; 
+            font-size: 0.77rem; 
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            font-family: 'Megrim';
+        }
+
+        #navbar ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--secondary-color);
+            transition: width 0.3s ease;
+        }
+
+        #navbar ul li a:hover::after,
+        #navbar ul li a.active::after {
+            width: 100%;
+        }
+
+        
+        .menu-toggle {
+            display: none; 
+            font-size: 1.8rem;
+            background: none;
+            border: none;
+            color: var(--text-color);
+            cursor: pointer;
+            order: 3;
+        }
+
+        .logo-img {
+            height: 80px; 
+            width: auto;  
+            display: block; 
+            transition: transform 0.3s ease;
+        }
+
+        .logo-img:hover {
+            transform: scale(1.05);
+        }
+
+        /* navbar scroll */
+        #navbar.hide {
+            transform: translateY(-100%);
+        }
+
+        /*  hero  */
+        #hero {
+            position: relative;
+            background: url('../imagens/hero.png') center center/cover no-repeat; 
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff; 
+        }
+
+        #hero h1 {
+            font-size: 2.3rem;
+            margin-bottom: 0.5rem;
+            color: #000000; 
+                text-shadow: 1px 1px 30px rgb(0, 0, 0);
+
+        }
+
+        #hero p {
+            font-size: 0,2rem;
+            margin-bottom: 2rem;
+            max-width: 1000px;
+            color: #ffffff; 
+                            
+
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: #000000;
+            padding: 12px 25px;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .cta-button:hover {
+            background-color: var(--hover-color);
+            transform: translateY(-3px);
+        }
+
+        /* music */
+        .music-category {
+            margin-bottom: 3rem;
+        }
+
+        .audio-player-grid, .embed-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .audio-item{
+            background-color: var(--card-background);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .embed-item{
+            background-color: transparent;
+    padding: 1.5rem;
+    padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .audio-item:hover{
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        .embed-item:hover{
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        .audio-item h4 {
+            margin-top: 0;
+            color: var(--secondary-color);
+        }
+
+        .audio-item audio {
+            width: 100%;
+            margin-top: 1rem;
+            border-radius: 5px;
+        }
+        
+        audio::-webkit-media-controls-panel {
+            background-color: #4a4a4a; 
+        }
+        audio::-webkit-media-controls-play-button,
+        audio::-webkit-media-controls-volume-slider,
+        audio::-webkit-media-controls-mute-button,
+        audio::-webkit-media-controls-timeline,
+        audio::-webkit-media-controls-current-time-display,
+        audio::-webkit-media-controls-time-remaining-display {
+            filter: invert(1) grayscale(1) brightness(1.5); 
+        }
+
+
+        .embed-placeholder {
+             padding: 0;
+    text-align: center;
+    border-radius: 8px;
+    overflow: hidden;
+    background: transparent;
+        }
+        .embed-placeholder p { 
+            margin-bottom: 1rem;
+    text-align: left;
+    padding: 0 0.5rem;
+        }
+
+        .embed-placeholder iframe {
+    border-radius: 8px;
+    margin: 0 auto;
+    display: block;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+        /* web dev */
+        .web-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .gallery-item {
+            background-color: var(--card-background);
+            border-radius: 8px;
+            overflow: hidden; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 220px; 
+            object-fit: cover; 
+            display: block;
+            border-bottom: 3px solid var(--primary-color);
+        }
+
+        .gallery-item-description {
+            padding: 1.5rem;
+        }
+
+        .gallery-item-description h4 {
+            color: var(--secondary-color);
+            margin-top: 0;
+        }
+
+        .future-projects {
+            margin-top: 3rem;
+            padding: 2rem;
+            background-color: rgba(44, 62, 80, 0.5); 
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        /* about */
+        #about .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        #about img.profile-pic { 
+            width: 200px;
+            height: 200px;
+            
+            object-fit: cover;
+            margin-bottom: 2rem;
+        
+        }
+        #about p {
+            max-width: 800px; 
+            margin-left: auto;
+            margin-right: auto;
+            text-align: left;
+            
+        }
+
+        /* contact  */
+        #contact {
+            text-align: center;
+        }
+        #contact form {
+            max-width: 600px;
+            margin: 2rem auto 0;
+            display: grid;
+            gap: 1rem;
+        }
+    
+         #contact label {
+             display: block;
+             text-align: left;
+             
+             font-weight: bold;
+             color: rgb(212, 212, 212);
+             font-size: 0.90rem;
+                 font-family: 'DM Sans', cursive; 
+ 
+         }
+        #contact input, #contact textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border-radius: 5px;
+            border: 1px solid #555;
+            background-color: #333;
+            color: var(--text-color);
+            font-family: inherit;
+             font-size: 1rem; 
+             
+        }
+        #contact input:focus, #contact textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 5px var(--primary-color);
+        }
+        #contact button[type="submit"] {
+            background-color: var(--secondary-color);
+            color: #fff;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        #contact button[type="submit"]:hover {
+            background-color: var(--hover-color);
+             
+        }
+
+        /* footer  */
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            background-color: #111; 
+            color: #aaa;
+            font-size: 0.9rem;
+
+            
+        }
+
+        
+
+        
+        footer p { margin-bottom: 0; }
+
+        /* responsivo  */
+           @media (max-width: 992px) {
+            
+        }
+
+        @media (max-width: 768px) {
+            #navbar .nav-center {
+                display: none;
+            }
+            
+            #navbar ul {
+                display: none; 
+                flex-direction: column;
+                width: 100%;
+                background-color: rgba(26, 26, 26, 0.98);
+                backdrop-filter: blur(10px);
+                position: absolute;
+                top: 70px; 
+                left: 0;
+                padding: 1rem 0;
+                gap: 0;
+            }
+            
+            #navbar ul.active {
+                display: flex; 
+            }
+            
+            #navbar ul li {
+                margin: 0;
+                text-align: center;
+            }
+            
+            #navbar ul li a {
+                display: block;
+                padding: 0.8rem 1rem;
+                border-bottom: 1px solid #333; 
+            }
+            
+            #navbar ul li a::after { 
+                display: none;
+            }
+            
+            #navbar ul li:last-child a {
+                border-bottom: none;
+            }
+            
+            .menu-toggle {
+                display: block; 
+            }
+
+
+            #hero h1 { font-size: 2.5rem; }
+            #hero p { font-size: 1.2rem; }
+            .audio-player-grid, .embed-grid, .web-gallery {
+                grid-template-columns: 1fr; 
+            }
+            .section-title { font-size: 2rem; }
+            h1 { font-size: 2.2rem; }
+            h2 { font-size: 1.8rem; }
+
+            #about .container {
+                padding: 0 10px;
+            }
+            #about img.profile-pic {
+                width: 150px;
+                height: 150px;
+            }
+        }
+
+        
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 25px;
+}
+
+.social-icon {
+    width: 32px;
+    height: 32px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0.8;
+}
+
+.social-icon:hover {
+    transform: scale(1.15);
+    opacity: 1;
+}
+
+/* ícones brancos */
+.social-icon {
+    filter: brightness(0) invert(1);
+}
+
+.page-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--background-color);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease;
+}
+
+.loader {
+    border: 5px solid var(--card-background);
+    border-top: 5px solid var(--primary-color);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+        @media (max-width: 480px) {
+            body { font-size: 15px; }
+            #hero h1 { font-size: 2rem; }
+            #hero p { font-size: 1rem; }
+            .cta-button { font-size: 1rem; padding: 10px 20px; }
+            .section-title { font-size: 1.8rem; }
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.6rem; }
+
+            #navbar .logo { font-size: 1.3rem; }
+            .menu-toggle { font-size: 1.6rem; }
+            #navbar ul { top: 60px; } 
+        }
+
+        .text-center { text-align: center; }
+        .mb-2 { margin-bottom: 2rem; }
+
+        .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.project-card {
+    background-color: var(--card-background);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.project-card:hover::before {
+    opacity: 1;
+}
+
+/* header hover */
+.project-header h4 {
+    color: var(--secondary-color);
+    transition: color 0.3s ease;
+}
+
+.project-card:hover .project-header h4 {
+    color: var(--secondary-color);
+}
+
+.project-description {
+    flex-grow: 1;
+    margin-bottom: 1.5rem;
+}
+
+.bandcamp-embed, .soundcloud-embed {
+    flex-grow: 2;
+    min-height: 350px;
+}
+
+/* responsividade */
+@media (max-width: 900px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .project-card {
+        padding: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .project-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .bandcamp-embed, .soundcloud-embed {
+        min-height: 300px;
+    }
+}
+
+.music-category h3 + .projects-grid {
+    margin-top: 0.5rem !important;
+}
+
+#about {
+    padding: 40px 0;
+    min-height: 80vh;
+    border-bottom: 1px solid #333;
+}
+
+#about .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center; 
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px; 
+}
+
+#about .container p {
+     max-width: 800px;
+     margin-left: auto;
+     margin-right: auto;
+     text-align: left; 
+     margin-bottom: 1rem; 
+}
+
+#about img.profile-pic {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 2.5rem; 
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); 
+    transition: transform 0.3s ease; 
+}
+
+#about img.profile-pic:hover {
+     transform: scale(1.05); 
+}
+
+
+
+.skills {
+    margin-top: 2rem;
+    text-align: center; 
+}
+
+.skills h3 {
+    color: var(--secondary-color); 
+    margin-bottom: 1rem;
+    font-family: 'Megrim'; 
+}
+
+.skills ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 15px; 
+}
+
+.skills ul li {
+    background-color: var(--card-background); 
+    color: var(--text-color);
+    padding: 8px 15px;
+    border-radius: 20px; 
+    font-size: 0.9rem;
+    border: 1px solid var(--secondary-color); 
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.skills ul li:hover {
+    background-color: var(--secondary-color);
+    border-color: var(--primary-color);
+    cursor: default; 
+}
+
+
+
+@media (max-width: 768px) {
+    #about .container {
+        padding: 0 15px; 
+    }
+
+    #about img.profile-pic {
+        width: 150px;
+        height: 150px;
+        margin-bottom: 2rem; 
+    }
+
+    #about .container p {
+         text-align: left; 
+    }
+
+    .skills ul {
+        flex-direction: row; 
+        justify-content: center; 
+    }
+}
+
+@media (max-width: 480px) {
+    #about img.profile-pic {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 1.5rem;
+    }
+    .skills ul {
+         gap: 10px; 
+    }
+     .skills ul li {
+         padding: 6px 12px;
+         font-size: 0.85rem;
+     }
+}
+
+/* player customizado */
+.custom-audio-player {
+    width: 100%;
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.custom-audio-player button {
+    background: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.custom-audio-player button:hover {
+    background: var(--primary-color);
+    transform: scale(1.05);
+}
+
+.custom-audio-player .progress-container {
+    flex-grow: 1;
+    height: 6px;
+    background: #4a4a4a;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.custom-audio-player .progress-bar {
+    height: 100%;
+    background: var(--primary-color);
+    border-radius: 3px;
+    width: 0%;
+}
+
+.custom-audio-player .time {
+    font-size: 0.8rem;
+    color: var(--text-color);
+    min-width: 80px;
+    text-align: right;
+    font-family: 'DM Sans';
+}
+
+.audio-item audio {
+    display: none;
+}
+
+.audio-item {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.skills {
+    margin-top: 2rem;
+    text-align: center;
+    width: 100%;
+}
+
+.skills h3 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-family: 'Megrim';
+    font-size: 1.5rem;
+}
+
+.skills ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.8rem;
+    max-width: 800px;
+}
+
+.skills ul li {
+    background-color: var(--card-background);
+    color: var(--text-color);
+    padding: 0.5rem 1.2rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    border: 1px solid var(--secondary-color);
+    transition: all 0.3s ease;
+}
+
+.skills ul li:hover {
+    background-color: var(--secondary-color);
+    transform: scale(1.05);
+    cursor: default;
+}
+
+#language-switcher {
+    position: fixed;
+    top: 17px;
+    right: 10px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  #language-switcher button {
+    padding: 2px 6px;
+    font-size: 10px;
+    border: none;
+    border-radius: 4px;
+    background: #ffffffdd;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.2s ease;
+  }
+
+  #language-switcher button:hover {
+    background: #ccc;
+  }
+
+    </style>
+</head>
+<body>
+
+    <div id="language-switcher">
+  <button onclick="switchLang('pt')">🇧🇷 PT</button>
+  <button onclick="switchLang('en')">🇺🇸 EN</button>
+</div>
+
+    <div class="page-loader">
+    <div class="loader"></div>
+</div>
+
+    <nav id="navbar">
+        <div class="container">
+            <a href="#hero" class="logo">
+                <img src="../imagens/logo.png" alt="Logo" class="logo-img">
+            </a> <button class="menu-toggle" id="menu-toggle" aria-label="Open Menu">&#9776;</button> <ul id="nav-links">
+                <li><a href="#hero" class="nav-link">Home</a></li>
+                <li><a href="#music" class="nav-link">Music</a></li>
+                <li><a href="#webdev" class="nav-link">Web Development</a></li>
+                <li><a href="#about" class="nav-link">About Me</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <h1>OST Composer & Music Producer & Web Dev</h1>
+        <p>Contact me at <strong>evyh.music@gmail.com</strong> to shape the sound and look of your next artistic project</p>
+        <a href="#music" class="cta-button">Explore My Work</a>
+    </div>
+</section>
+
+    <section id="music">
+        <div class="container">
+            <h2 class="section-title">My Music</h2>
+            <p class="text-center mb-2">
+                With 6 years of experience in music production, I create music that adapts to different styles and needs. I’ve worked on everything from orchestral, electronic, retro, ambient, jazz, and experimental game soundtracks to tracks for artists in genres like pop, indie, glitchpop, hyperpop, EDM, rock, trap, and more.
+
+My focus is always on emotion and atmosphere—music that supports the story, the gameplay, or the artist’s message. I’m flexible with budgets and aim to offer a quality that's hard to find at this price point.
+            </p>
+
+            <div class="music-category">
+                <h3>Game Soundtracks</h3>
+                <div class="audio-player-grid">
+
+                    <div class="audio-item">
+                        <h4>A Last Flicker - (2025)</h4>
+                        <p>Genre: Ambient, Acoustic</p>
+                       <div class="custom-audio-player" data-src="../imagens/A last flicker.mp3">
+        <button class="play-btn">▶</button>
+        <div class="progress-container">
+            <div class="progress-bar"></div>
+        </div>
+        <span class="time">0:00</span>
+    </div>
+</div>
+
+                    <div class="audio-item">
+                        <h4>Ciência X Magia - (2021)</h4>
+                        <p>Genre: Orchestral, Battle</p>
+                        <div class="custom-audio-player" data-src="../imagens/Inquietude.mp3">
+        <button class="play-btn">▶</button>
+        <div class="progress-container">
+            <div class="progress-bar"></div>
+        </div>
+        <span class="time">0:00</span>
+    </div>
+</div>
+
+                    <div class="audio-item">
+                        <h4>Ciência X Magia - (2022)</h4>
+                        <p>Genre: Electronic, Battle</p>
+                        <div class="custom-audio-player" data-src="../imagens/RPG - Halo inspired.mp3">
+        <button class="play-btn">▶</button>
+        <div class="progress-container">
+            <div class="progress-bar"></div>
+        </div>
+        <span class="time">0:00</span>
+    </div>
+</div>
+
+                     <div class="audio-item">
+                        <h4>Ciência X Magia - (2021)</h4>
+                        <p>Genre: Rock, Battle</p>
+                        <div class="custom-audio-player" data-src="../imagens/Rock.mp3">
+        <button class="play-btn">▶</button>
+        <div class="progress-container">
+            <div class="progress-bar"></div>
+        </div>
+        <span class="time">0:00</span>
+    </div>
+</div>
+
+                     <div class="audio-item">
+                        <h4>Ciência X Magia - (2021)</h4>
+                        <p>Genre: Acoustic, Ambient</p>
+                        <div class="custom-audio-player" data-src="../imagens/Pragmatikós.mp3">
+        <button class="play-btn">▶</button>
+        <div class="progress-container">
+            <div class="progress-bar"></div>
+        </div>
+        <span class="time">0:00</span>
+    </div>
+</div>
+
+                     <div class="audio-item">
+                        <h4>Unannounced Project - (2023)</h4>
+                        <p>Genre: Ambient, Acoustic</p>
+                        <div class="custom-audio-player" data-src="../imagens/voima inspired.mp3">
+        <button class="play-btn">▶</button>
+        <div class="progress-container">
+            <div class="progress-bar"></div>
+        </div>
+        <span class="time">0:00</span>
+    </div>
+</div>
+
+                    </div>
+            </div>
+
+            <div class="music-category">
+                <h3>Music for Artists</h3>
+    <div class="audio-player-grid">
+        <div class="audio-item">
+            <h4>JellyFish! - ACT OF GOD</h4>
+            <p>Genre: Indie-Pop/Hyperpop</p>
+            <div class="custom-audio-player" data-src="../imagens/ACT OF GOD.mp3">
+                <button class="play-btn">▶</button>
+                <div class="progress-container">
+                    <div class="progress-bar"></div>
+                </div>
+                <span class="time">0:00</span>
+            </div>
+            <p>Produced & Mixed & Mastered by me.</p>
+        </div>
+
+        <div class="audio-item">
+            <h4>JellyFish! - NEEDLES</h4>
+            <p>Genre: Glitchpop/Indie</p>
+            <div class="custom-audio-player" data-src="../imagens/needles.mp3">
+                <button class="play-btn">▶</button>
+                <div class="progress-container">
+                    <div class="progress-bar"></div>
+                </div>
+                <span class="time">0:00</span>
+            </div>
+            <p>Produced & Mixed & Mastered by me.</p>
+        </div>
+
+        <div class="audio-item">
+            <h4>2hollis Inspired Beat</h4>
+            <p>Genre: Hyperpop/EDM</p>
+            <div class="custom-audio-player" data-src="../imagens/2hollis.mp3">
+                <button class="play-btn">▶</button>
+                <div class="progress-container">
+                    <div class="progress-bar"></div>
+                </div>
+                <span class="time">0:00</span>
+            </div>
+            <p>Produced & Mixed & Mastered by me.</p>
+        </div>
+    </div>
+</div>
+
+            <div class="music-category">
+                <h3>Other projects</h3>
+    <div class="projects-grid">
+        <!-- bandcamp -->
+        <div class="project-card">
+            <div class="project-header">
+                <h4>Visionic OST</h4>
+                <div class="project-meta">
+                    <span class="project-year">(2020)</span>
+                    <span class="project-context">GameJellow - Game Jam Project</span>
+                </div>
+            </div>
+            
+            <p class="project-description">Made in 5 days for a Game Jam, a quick project where I focused on capturing the mood of each scene.</p>
+            
+            <div class="bandcamp-embed">
+                <iframe style="border: 0; width: 100%; height: 350px;" 
+                        src="https://bandcamp.com/EmbeddedPlayer/album=2257592920/size=large/bgcol=ffffff/linkcol=0f91ff/tracklist=true/artwork=small/transparent=true/" 
+                        seamless>
+                </iframe>
+            </div>
+            
+            <div class="project-actions">
+                <a href="https://braindeadx.bandcamp.com/album/visionic-ost-2" class="action-button" target="_blank">View on Bandcamp</a>
+            </div>
+        </div>
+        
+        <!-- soundcloud -->
+        <div class="project-card">
+            <div class="project-header">
+                <h4>Soundcloud</h4>
+                <div class="project-meta">
+                    <span class="project-context"></span>
+                </div>
+            </div>
+            
+            <p class="project-description">Various ideas and throwaways, a mix of random tracks and ideas I’ve worked on.</p>
+            
+            <div class="soundcloud-embed">
+                <iframe width="100%" height="350" scrolling="no" frameborder="no" allow="autoplay" 
+                        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/2021556804&color=%230f91ff&auto_play=false&hide_related=true&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=false">
+                </iframe>
+            </div>
+            
+            <div class="project-actions">
+                <a href="https://soundcloud.com/mmmxnth" class="action-button" target="_blank">Follow on SoundCloud</a>
+            </div>
+        </div>
+    </div>
+</div>
+    </section>
+
+    <section id="webdev">
+        <div class="container">
+            <h2 class="section-title">Web Development</h2>
+            <p class="text-center mb-2">
+                I've been programming for a few months now, mainly using HTML, CSS, and JavaScript. Even in this short time, I've built a solid foundation and developed a good eye for both structure and creative visual design. I focus on making websites that are clean, engaging, and user-friendly.
+            </p>
+            <p class="text-center mb-2">
+                I build personal portfolios, indie game websites, music artist pages, and other custom projects. I can also take care of the full visual design if needed.
+
+Since I'm still growing my portfolio, my prices are low. It's a great chance to get something unique and well-made without spending much. I aim to keep things accessible for anyone looking to bring their ideas to life.
+            </p>
+
+            <div class="web-gallery">
+                <div class="gallery-item">
+                    <a href="https://nourak.xyz/" target="_blank">
+                    <img src="../imagens/nourak website.png" alt="Screenshot of Project 1"> <div class="gallery-item-description">
+                        </a>
+                        <h4>Noûrak</h4>
+                        <p>This website is for my side music project, Nourak. I built it from scratch using HTML, CSS, and JavaScript, and designed everything myself to practice my skills.
+
+</p>
+                        </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="../imagens/silentius website.gif" alt="Screenshot of Project 2"> <div class="gallery-item-description">
+                        <h4>Silentius</h4>
+                        <p>Silentius is an ongoing artistic project, an interactive poem I’m still working on. I built the website using HTML, CSS, and JavaScript. I also made all the art/design from scratch.</p>
+                        </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="../imagens/evyh website.png" alt="Placeholder for a future project">
+                    <div class="gallery-item-description">
+                        <h4>Portfolio</h4>
+                        <p>This website is my personal portfolio where I showcase my work. I built and designed everything using HTML, CSS, and JavaScript, focusing on a clean, simple, and user-friendly experience.</p>
+                    </div>
+                </div>
+                </div>
+    </section>
+
+<section id="about">
+    <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <img src="../imagens/logoo cool.png" alt="Your Profile Picture" class="profile-pic"> <p>
+            I'm evyh! I make music and build websites.
+
+I've been producing music for 6 years, focusing on soundtracks and tracks that connect emotionally with each project. I like working across different genres and styles, always aiming to create something honest and impactful.
+        </p>
+        <p>
+           More recently, I’ve been getting into web development. I use HTML, CSS, and JavaScript to create clean, functional websites that also have a strong visual identity. Whether it's for portfolios, art projects, or small businesses, I care about making things that feel right and work well.
+        </p>
+        <p>
+           If you’re looking for someone flexible with pricing, committed, creative, and straightforward who delivers quality that’s hard to find at an affordable rate, let’s talk.
+        </p>
+        <div class="skills">
+    <h3>Skills & Tools</h3>
+    <ul>
+        <li>HTML5</li>
+        <li>CSS3</li>
+        <li>JavaScript</li>
+        <li>Git</li>
+        <li>UX Fundamentals</li>
+        <li>UI/Visual Design</li>
+        <li>Photoshop</li>
+        <li>Music Production (FL Studio)</li>
+        <li>Sound Design</li>
+    </ul>
+</div>
+        </div>
+        
+</section>
+
+     <section id="contact">
+    <div class="container">
+        <h2 class="section-title">Get In Touch</h2>
+        <p class="text-center mb-2">Interested in collaborating on a music project or need a website? Let's talk!</p>
+        
+        <form id="contact-form" action="https://formspree.io/f/xkgoqrpz" method="POST">
+            <label for="name">Name:</label> <input type="text" id="name" name="name" placeholder="Your Name" required>
+            
+            <label for="email">Email:</label> <input type="email" id="email" name="_replyto" placeholder="Your Email" required> <label for="message">Message:</label> <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+            
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+</section>
+
+   <footer>
+    <div class="container">
+        <!-- icones -->
+        <div class="social-links">
+            <a href="https://www.youtube.com/@evyhmusicc" target="_blank" aria-label="YouTube">
+                <img src="../imagens/youtube.png" alt="YouTube" class="social-icon">
+            </a>
+            <a href="https://www.instagram.com/evyh.music/" target="_blank" aria-label="Instagram">
+                <img src="../imagens/ttttttttttttttttttt.png" alt="Instagram" class="social-icon">
+            </a>
+            <a href="https://soundcloud.com/htnxm" target="_blank" aria-label="SoundCloud">
+                <img src="../imagens/4691279_soundcloud_icon.png" alt="SoundCloud" class="social-icon">
+            </a>
+        </div>
+        
+        <p>&copy; <span id="currentYear"></span> evyh. All Rights Reserved.</p>
+    </div>
+</footer>
+
+    <script>
+       // smooth scrolling 
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    const navbarHeight = document.getElementById('navbar').offsetHeight;
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+
+                    // close mobile menu if open
+                    const navLinks = document.getElementById('nav-links');
+                    if (navLinks.classList.contains('active')) {
+                        navLinks.classList.remove('active');
+                    }
+                }
+            });
+        });
+
+        // active navigation link highlighting on scroll 
+        const sections = document.querySelectorAll('section');
+        const navLi = document.querySelectorAll('#navbar ul li a.nav-link');
+        const navbarHeight = document.getElementById('navbar').offsetHeight;
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - navbarHeight - 50; 
+                if (pageYOffset >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLi.forEach(a => {
+                a.classList.remove('active');
+                if (a.getAttribute('href').substring(1) === current) {
+                    a.classList.add('active');
+                }
+            });
+
+            if (window.pageYOffset < sections[0].offsetTop - navbarHeight - 50) {
+                 navLi.forEach(a => a.classList.remove('active'));
+                 const homeLink = document.querySelector('#navbar ul li a[href="#hero"]');
+                 if (homeLink) homeLink.classList.add('active');
+            }
+        });
+
+         // mobile tenu toggle 
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // navbar hide show on scroll
+        let lastScroll = 0;
+        const navbar = document.getElementById('navbar');
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll <= 0) {
+                navbar.classList.remove('hide');
+                return;
+            }
+            
+            if (currentScroll > lastScroll && !navbar.classList.contains('hide')) {
+                // scroll down
+                navbar.classList.add('hide');
+            } else if (currentScroll < lastScroll && navbar.classList.contains('hide')) {
+                // scroll up
+                navbar.classList.remove('hide');
+            }
+            
+            lastScroll = currentScroll;
+        });
+
+        window.dispatchEvent(new Event('scroll'));
+
+        // loader
+window.addEventListener('load', function() {
+    const loader = document.querySelector('.page-loader');
+    setTimeout(() => {
+        loader.style.opacity = '0';
+        setTimeout(() => {
+            loader.style.display = 'none';
+        }, 500);
+    }, 1000);
+});
+
+// player customizado
+document.querySelectorAll('.custom-audio-player').forEach(player => {
+    const audio = new Audio(player.dataset.src);
+    const playBtn = player.querySelector('.play-btn');
+    const progressBar = player.querySelector('.progress-bar');
+    const progressContainer = player.querySelector('.progress-container');
+    const timeDisplay = player.querySelector('.time');
+
+    // play/pause
+    playBtn.addEventListener('click', () => {
+        if (audio.paused) {
+            audio.play();
+            playBtn.textContent = '❚❚';
+        } else {
+            audio.pause();
+            playBtn.textContent = '▶';
+        }
+    });
+
+    // barra de progresso
+    audio.addEventListener('timeupdate', () => {
+        const progress = (audio.currentTime / audio.duration) * 100;
+        progressBar.style.width = `${progress}%`;
+        
+        // atualiza tempo
+        const minutes = Math.floor(audio.currentTime / 60);
+        const seconds = Math.floor(audio.currentTime % 60);
+        timeDisplay.textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+    });
+
+    // clicar na barra de progresso
+    progressContainer.addEventListener('click', (e) => {
+        const clickPosition = e.offsetX;
+        const containerWidth = progressContainer.clientWidth;
+        const seekTime = (clickPosition / containerWidth) * audio.duration;
+        audio.currentTime = seekTime;
+    });
+
+    // reinicia ícone quando termina
+    audio.addEventListener('ended', () => {
+        playBtn.textContent = '▶';
+    });
+});
+
+ function switchLang(lang) {
+    // Salva a escolha do usuário
+    localStorage.setItem('langOverride', lang);
+    // Redireciona para a versão escolhida
+    window.location.href = `/${lang}/`;
+  }
+
+  // Se o usuário ainda não escolheu manualmente, detecta idioma do navegador
+  const hasOverride = localStorage.getItem('langOverride');
+  if (!hasOverride && window.location.pathname === '/') {
+    const lang = navigator.language.toLowerCase();
+    const userLang = lang.startsWith('pt') ? 'pt' : 'en';
+    window.location.href = `/${userLang}/`;
+  }
+    </script>
+
+</body>
+</html>
